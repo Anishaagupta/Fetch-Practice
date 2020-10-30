@@ -13,6 +13,9 @@ const renderRow = (data = null, index = 1) => {
       <td>{data.region}</td>
       <td>{data.subregion}</td>
       <td>{data.population}</td>
+      <td>{data.languages[0].name}</td>
+      <td>{data.currencies[0].name}</td>
+      <td>{data.currencies[0].symbol}</td>
     </tr>
   );
 };
@@ -26,7 +29,7 @@ const CountriesTable = ({ data = [] } = {}) => {
     <table className="table table-striped">
       <thead>
         <tr>
-          <th scope="col">#</th>
+          <th scope="col">S.No</th>
           <th scope="col">Name</th>
           <th scope="col">Flag</th>
           <th scope="col">Code</th>
@@ -34,6 +37,9 @@ const CountriesTable = ({ data = [] } = {}) => {
           <th scope="col">Region</th>
           <th scope="col">Sub-Region</th>
           <th scope="col">Population</th>
+          <th scope="col">Language</th>
+          <th scope="col">Currency Name</th>
+          <th scope="col">Currency Symbol</th>
         </tr>
       </thead>
       <tbody>{data.map(renderRow)}</tbody>
